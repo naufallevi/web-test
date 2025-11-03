@@ -1,11 +1,7 @@
-// =====================================
-// 🌟 ANIMASI NEW LOAD
-// =====================================
+// ANIMASI SAAT LOAD
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
-  const boxes = document.querySelectorAll(
-    ".name, .hobby, .fullname, .myhobby, .description"
-  );
+  const boxes = document.querySelectorAll(".name, .hobby, .fullname, .myhobby, .description");
 
   container.style.opacity = "0";
   container.style.transform = "translateY(40px)";
@@ -18,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 200);
   });
 
-  // Animasi masuk satu per satu
   boxes.forEach((box, i) => {
     box.style.opacity = "0";
     box.style.transform = "translateY(20px)";
@@ -33,20 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// =====================================
-// 🌀 PARALLAX BACKGROUND
-// =====================================
+// PARALLAX BACKGROUND
 document.addEventListener("mousemove", (e) => {
   const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
   const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
   document.body.style.backgroundPosition = `${50 - moveX / 2}% ${50 - moveY / 2}%`;
 });
 
-// =====================================
-// 🎨 3D TILT + RIPPLE EFEK
-// =====================================
+// HOVER 3D + RIPPLE EFEK
 document.querySelectorAll(".name, .hobby, .fullname, .myhobby").forEach((box) => {
   box.style.cursor = "pointer";
+
   box.addEventListener("mousemove", (e) => {
     const rect = box.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
@@ -76,9 +68,7 @@ document.querySelectorAll(".name, .hobby, .fullname, .myhobby").forEach((box) =>
   });
 });
 
-// =====================================
-// 🌗 DARK MODE TOGGLE
-// =====================================
+// DARK MODE TOGGLE
 const body = document.body;
 const container = document.querySelector(".container");
 const darkModeBtn = document.createElement("button");
@@ -151,9 +141,7 @@ function setColors(primary, secondary, desc, textColor) {
   descEl.style.color = textColor;
 }
 
-// =====================================
-// 🎉 MORE VIVID
-// =====================================
+// CONFETTI
 function triggerConfetti() {
   for (let i = 0; i < 20; i++) {
     const conf = document.createElement("div");
@@ -168,9 +156,7 @@ function triggerConfetti() {
   }
 }
 
-// =====================================
-// ✍️ TYPING EFFECT
-// =====================================
+// TYPING EFFECT
 const descText = document.querySelector(".description p");
 const text = descText.textContent.trim();
 descText.textContent = "";
@@ -182,9 +168,7 @@ let idx = 0;
   }
 })();
 
-// =====================================
-// 💧 DYNAMIC STYLE
-// =====================================
+// STYLE TAMBAHAN
 const style = document.createElement("style");
 style.textContent = `
   .ripple {
